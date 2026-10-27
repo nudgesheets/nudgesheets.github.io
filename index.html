@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nudge Sheets: free tax pot tracker for freelancers</title>
+<meta name="description" content="A free spreadsheet for freelancers: log each invoice, and it tells you how much to set aside for tax and the one thing to do next. Google Sheets or Excel.">
+<meta property="og:title" content="Free Tax Pot Tracker for Freelancers">
+<meta property="og:description" content="Log each invoice. The sheet works out your tax set-aside and tells you the one thing to do next. Google Sheets or Excel.">
+<meta property="og:image" content="img/lite.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="img/icon.png">
+<style>
+:root{--ink:#1F2A30;--teal:#1E6F6A;--mint:#E3F2EF;--warn:#F08A3C;--good:#2E9E5B;--grey:#5F6B70;--bg:#FAFCFB;--card:#fff;--line:#D7E6E2}
+@media (prefers-color-scheme:dark){:root{--ink:#E6EEEC;--teal:#5FC2B8;--mint:#173533;--grey:#9AA8AC;--bg:#0F1716;--card:#16201F;--line:#25403C}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px}
+header{display:flex;align-items:center;gap:12px;padding:20px 0}
+header img{width:44px;height:44px;border-radius:10px}
+header b{font-size:20px;letter-spacing:.2px}
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:36px;align-items:center;padding:24px 0 40px}
+h1{font-size:clamp(30px,5vw,46px);line-height:1.12;margin:0 0 14px}
+h1 em{font-style:normal;color:var(--teal)}
+.lead{font-size:19px;color:var(--grey);margin:0 0 22px}
+.btn{display:inline-block;background:var(--teal);color:#fff;text-decoration:none;font-weight:700;padding:15px 24px;border-radius:12px;font-size:18px}
+.btn:hover{filter:brightness(1.08)}
+.small{font-size:14px;color:var(--grey);margin-top:10px}
+.shot{width:100%;border-radius:16px;border:1px solid var(--line);box-shadow:0 18px 40px rgba(30,111,106,.18)}
+section{padding:36px 0;border-top:1px solid var(--line)}
+h2{font-size:26px;margin:0 0 18px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:0;padding:0;list-style:none}
+.steps li{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.steps b{display:block;color:var(--teal);font-size:15px;margin-bottom:6px}
+.chips span{display:inline-block;border-radius:8px;padding:2px 10px;font-weight:700;font-size:15px;margin-right:6px}
+.y{background:#FFF6C9;color:#5C4A00}.o{background:#FDE3CF;color:#8A4410}.g{background:#D6F0DF;color:#1B5E36}
+.full{display:grid;grid-template-columns:1fr 1.1fr;gap:32px;align-items:center}
+.full ul{padding-left:20px;margin:0 0 18px}
+.soon{display:inline-block;border:2px solid var(--teal);color:var(--teal);font-weight:700;padding:12px 20px;border-radius:12px}
+footer{padding:28px 0 40px;color:var(--grey);font-size:14px;border-top:1px solid var(--line)}
+footer a{color:var(--teal)}
+@media (max-width:760px){.hero,.full{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.hero{padding-top:8px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><img src="img/logo.png" alt=""><b>Nudge Sheets</b></header>
+
+<div class="hero">
+  <div>
+    <h1>You got paid. <em>How much of it is yours?</em></h1>
+    <p class="lead">A free sheet for freelancers. Log each invoice and it works out your tax set-aside, then tells you the one thing to do next.</p>
+    <a class="btn" href="nudge-sheets-tax-pot-lite.xlsx" download>Download the free sheet</a>
+    <p class="small">Free, no sign-up. Works in Google Sheets and Excel, any currency.</p>
+  </div>
+  <img class="shot" src="img/lite-dashboard.jpg" alt="The tracker's dashboard: 'Your one thing today: move 112.50 to your tax pot'">
+</div>
+
+<section>
+  <h2>How it works</h2>
+  <ol class="steps">
+    <li><b>1. One row per invoice</b>Type the client, the amount and the date on Money In.</li>
+    <li><b>2. Mark it paid</b>Set Paid? to Yes. The sheet works out the tax part at the rate you pick.</li>
+    <li><b>3. Do the one thing</b>The dashboard says what's next: move money to your tax pot, chase an invoice, or relax.</li>
+  </ol>
+  <p class="chips" style="margin-top:20px"><span class="y">yellow</span>you type &nbsp; <span class="o">orange</span>needs you &nbsp; <span class="g">green</span>done</p>
+</section>
+
+<section>
+  <div class="full">
+    <img class="shot" src="img/full.jpg" alt="The full Freelancer Money Tracker">
+    <div>
+      <h2>Want more? The full tracker</h2>
+      <ul>
+        <li>Tax payment dates, with a warning 14 days before each one</li>
+        <li>Business costs, and what's yours to keep</li>
+        <li>A monthly income goal with a progress bar</li>
+        <li>Clients: who pays you most, and who still owes you</li>
+        <li>Your whole tax year, month by month</li>
+      </ul>
+      <span class="soon" id="buy">$15 · opening this week</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  A tracking tool, not tax advice: check your rate with a local accountant or tax office.<br>
+  Questions: <a href="mailto:steadysheets@proton.me">steadysheets@proton.me</a> ·
+  <a href="https://www.youtube.com/@nudgesheets">YouTube</a> ·
+  <a href="https://www.pinterest.com/nudgesheets/">Pinterest</a><br>
+  This site sets no cookies and tracks nothing.
+</footer>
+</div>
+</body>
+</html>
